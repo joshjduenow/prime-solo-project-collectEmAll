@@ -4,15 +4,19 @@ import LogOutButton from "../LogOutButton/LogOutButton";
 import "./Nav.css";
 import { useSelector } from "react-redux";
 import Pokeball from "../Pokeball/Pokeball";
+import Header from "../Header/Header";
 
 function Nav() {
   const user = useSelector((store) => store.user);
 
   return (
+    <>
+    <Header />
     <div className="nav">
-      <Link to="/home">
+      <Pokeball />
+      {/* <Link to="/home">
         <h2 className="nav-title">Collect' Em All !</h2>
-      </Link>
+      </Link> */}
       <div>
         {/* If no user is logged in, show these links */}
         {!user.id && (
@@ -41,8 +45,8 @@ function Nav() {
           About
         </Link>
       </div>
-      <Pokeball />
     </div>
+    </>
   );
 }
 
