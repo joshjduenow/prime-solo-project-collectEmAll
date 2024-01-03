@@ -13,7 +13,6 @@ function Nav() {
     <>
       <Header />
       <div className="nav">
-        <Pokeball />
         <div>
           {/* If no user is logged in, show these links */}
           {!user.id && (
@@ -30,6 +29,7 @@ function Nav() {
           {/* If a user is logged in, show these links */}
           {user.id && (
             <>
+            <Pokeball />
               <Link className="navLink" to="/mycards">
                 My Cards
               </Link>

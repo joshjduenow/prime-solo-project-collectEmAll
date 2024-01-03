@@ -1,4 +1,5 @@
 import React from 'react';
+import "./MyCards.css"
 
 // This is one of our simplest components
 // It doesn't have local state
@@ -8,7 +9,7 @@ import React from 'react';
 export default function MyCards() {
   return (
     <div className="container">
-      <p>My Cards</p>
+      <h2>My Cards</h2>
     </div>
   );
 }

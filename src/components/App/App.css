@@ -27,13 +27,14 @@ Button
 -------------------------------------------------------------------------------- */
 
 .btn {
+  font-family: "Pokemon Solid", sans-serif;
   display: inline-block;
   padding: 10px 20px;
-  border-color: #014041;
+  border-color: #ffcc00;
   border-width: 1px 1px 3px;
   border-radius: 4px;
-  background-color: #00acb0;
-  color: #f8f8f8;
+  background-color: #0a285f;
+  color: #ffcc00;
   font-size: 1.1rem;
   outline: 0;
   cursor: pointer;
@@ -54,10 +55,10 @@ Button
   width: 100%;
 }
 
-.btn:hover {
+/* .btn:hover {
   background-color: #008183;
   text-decoration: none;
-}
+} */
 
 /* This line makes the "Register" and "Login" buttons look like links */
 .btn_asLink {
