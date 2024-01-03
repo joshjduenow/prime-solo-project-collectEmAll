@@ -19,6 +19,6 @@
       white 24.25px 25%
     );
   border-radius: 50%;
-  border: 2px solid black;
+  border: 1px solid black;
   box-shadow: inset -4px -2px 0 0 rgba(0, 0, 0, 0.2);
 }
