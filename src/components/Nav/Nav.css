@@ -1,10 +1,10 @@
+/* flex box layout */
 .nav {
-  /* flex box layout */
   display: flex;
   justify-content: center;
   align-items: flex-start;
   align-content: space-between;
-  background-color: #0A285F;
+  background-color: #0a285f;
   overflow: hidden;
 }
 
@@ -12,24 +12,14 @@
   text-decoration: none;
 }
 
-.nav-title {
-  font-family: 'Pokemon Solid', sans-serif;                                               
-  font-size: 24px;
-  font-weight: 700;
-  color: #FFCC00;
-  padding-top: 10px;
-  padding-left: 10px;
-  margin: 0;
-}
-
 .navLink {
-  font-family: 'Pokemon Solid', sans-serif;
-  color: #FFCC00;
-  background-color: #0A285F;
+  font-family: "Pokemon Solid", sans-serif;
+  color: #ffcc00;
+  background-color: #0a285f;
   text-align: center;
-  padding: 10px 10px;
+  padding: 5px 16px;
   text-decoration: none;
-  font-size: 10px;
+  font-size: 16px;
 
   /* these last two make the logout button in
   the nav bar look like another link */
@@ -38,9 +28,9 @@
   outline: 0;
 }
 
-.navLink:hover {
+/* .navLink:hover {
   background-color: #008183;
-}
+} */
 
 /* .pokeball {
   display: block;
@@ -58,5 +48,3 @@
   border: 2px solid black;
   box-shadow: inset -4px -2px 0 0 rgba(0, 0, 0, 0.2);
 } */
-
-

@@ -1,10 +1,10 @@
 .nav-title {
-    font-family: 'Pokemon Solid', sans-serif;                                               
-    font-size: 24px;
-    font-weight: 700;
-    color: #FFCC00;
-    background-color: #0A285F;
-    padding-top: 10px;
-    padding-left: 100px;
-    margin: 0;
-  }
+  font-family: "Pokemon Solid", sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #ffcc00;
+  background-color: #0a285f;
+  padding-top: 10px;
+  padding-left: 85px;
+  margin: 0;
+}

@@ -5,12 +5,11 @@ import React from 'react';
 // It doesn't dispatch any redux actions or display any part of redux state
 // or even care what the redux state is
 
-function InfoPage() {
+export default function MyCards() {
   return (
     <div className="container">
-      <p>Info Page</p>
+      <p>My Cards</p>
     </div>
   );
 }
 
-export default InfoPage;
