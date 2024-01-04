@@ -1,0 +1,29 @@
+.button-74 {
+    font-family: "Pokemon Solid", sans-serif;
+    background-color: #0a285f;
+    border: 2px solid #ffcc00;
+    border-radius: 30px;
+    box-shadow: black 4px 4px 0 0;
+    color: #ffcc00;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 0 18px;
+    line-height: 50px;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+  
+  .button-74:hover {
+    background-color: #0a285f;
+  }
+  
+  .button-74:active {
+    box-shadow: #0a285f 2px 2px 0 0;
+    transform: translate(2px, 2px);
+  }
+  
