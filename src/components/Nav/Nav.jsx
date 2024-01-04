@@ -29,13 +29,17 @@ function Nav() {
           {/* If a user is logged in, show these links */}
           {user.id && (
             <>
-            <Pokeball />
+              <Pokeball />
               <Link className="navLink" to="/mycards">
                 My Cards
               </Link>
+              
+              <Link className="navLink" to="/archive">
+                Archived
+              </Link>
 
               <Link className="navLink" to="/saved">
-                Saved For Later
+                Saved Cards
               </Link>
 
               <LogOutButton className="navLink" />

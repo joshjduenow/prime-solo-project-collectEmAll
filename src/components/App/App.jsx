@@ -20,7 +20,7 @@ import LandingPage from "../LandingPage/LandingPage";
 import LoginPage from "../LoginPage/LoginPage";
 import RegisterPage from "../RegisterPage/RegisterPage";
 import SavedCard from "../SavedCard/SavedCard";
-
+import Archived from "../Archived/Archived";
 
 import "./App.css";
 
@@ -70,11 +70,18 @@ function App() {
             <MyCards />
           </ProtectedRoute>
           <ProtectedRoute
-            // logged in shows MyCards else shows LoginPage
+            // logged in shows Saved else shows LoginPage
             exact
             path="/saved"
           >
             <SavedCard />
+          </ProtectedRoute>
+          <ProtectedRoute
+            // logged in shows Saved else shows LoginPage
+            exact
+            path="/archive"
+          >
+            <Archived />
           </ProtectedRoute>
 
           <Route exact path="/login">

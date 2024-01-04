@@ -10,7 +10,7 @@ function UserPage() {
   return ( 
     <>
     <div className="container">
-      <h2>Start Collecting, {user.username}!</h2>
+      <h2 className="greeting">Start Collecting, {user.username}!</h2>
       {/* <p>Your ID is: {user.id}</p> */}
     </div>
     <CardList />

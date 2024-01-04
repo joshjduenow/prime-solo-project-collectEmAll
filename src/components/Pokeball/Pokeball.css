@@ -1,24 +1,37 @@
-.pokeball {
-  position: absolute;
-  top: 75px;
-  left: 155px;
-  display: block;
-  width: 48px;
-  height: 48px;
-  background: radial-gradient(
-      white 4px,
-      black 4.25px 4.5px,
-      white 4.75px 6px,
-      black 6.25px 8px,
-      transparent 8.25px
-    ),
-    linear-gradient(
-      to bottom,
-      red 0 20px,
-      black 20.25px 24px,
-      white 24.25px 25%
-    );
-  border-radius: 50%;
-  border: 1px solid black;
-  box-shadow: inset -4px -2px 0 0 rgba(0, 0, 0, 0.2);
-}
+
+   .pokeball {
+    position: absolute;
+    top: 50%; /* Position the Pokeball in the center of the circle */
+    left: 50%; /* Position the Pokeball in the center of the circle */
+    transform: translate(-50%, -50%); /* Centering the Pokeball */
+    display: block;
+    width: 48px;
+    height: 48px;
+    background: radial-gradient(
+        white 4px,
+        black 4.25px 4.5px,
+        white 4.75px 6px,
+        black 6.25px 8px,
+        transparent 8.25px
+      ),
+      linear-gradient(
+        to bottom,
+        red 0 20px,
+        black 20.25px 24px,
+        white 24.25px 25%
+      );
+    border-radius: 50%;
+    border: 1px solid black;
+    box-shadow: inset -4px -2px 0 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  .pokeball-container {
+    position: absolute;
+    top: 72px; /* Adjust this value to position the circle vertically */
+    left: 140px; /* Adjust this value to position the circle horizontally */
+    width: 75px; /* Twice the pokeball's width */
+    height: 75px; /* Twice the pokeball's height */
+    border-radius: 50%; /* Making it a circle */
+    background-color: #0a285f; /* Setting the blue backdrop */
+  }
+  

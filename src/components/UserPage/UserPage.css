@@ -1,7 +1,12 @@
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 15px;
-    padding: 10px;
+  display: flex;
+  align-content: space-around;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.greeting {
+  font-size: 20px;
+  padding-top: 25px;
 }
