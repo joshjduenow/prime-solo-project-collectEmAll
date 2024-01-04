@@ -1,5 +1,6 @@
-import React from 'react';
-import "./MyCards.css"
+import React from "react";
+import "./MyCards.css";
+import CardItem from "../CardItem/CardItem";
 
 // This is one of our simplest components
 // It doesn't have local state
@@ -8,9 +9,11 @@ import "./MyCards.css"
 
 export default function MyCards() {
   return (
-    <div className="container">
-      <h2>My Cards</h2>
-    </div>
+    <>
+      <div className="container">
+        <h2 className="mycards">My Collection</h2>
+      </div>
+      <CardItem />
+    </>
   );
 }
-

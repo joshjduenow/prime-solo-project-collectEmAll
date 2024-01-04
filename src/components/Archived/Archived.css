@@ -1,0 +1,11 @@
+.container {
+    padding-top: 25px;
+  }
+  .archived {
+    font-size: 30px;
+    color: #ffcc00;
+    text-shadow: 1px 1px black;
+    font-family: "Pokemon Solid", sans-serif;
+    padding-top: 25px;
+  }
+  
