@@ -7,9 +7,12 @@
 }
 
 .greeting {
-    font-size: 21px;
+    font-size: 20px;
+    letter-spacing: .5px;
     color: #FB1B1B;
     text-shadow: 1.5px 1.5px black;
     font-family: "Pokemon Solid", sans-serif;
     padding-top: 30px;
+    padding-left: -10px;
+    padding-right: -10px;
 }
