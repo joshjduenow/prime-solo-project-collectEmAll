@@ -18,11 +18,12 @@ export default function CardItem({ card }) {
   return (
     <>
       <div className="cardItem">
-        <div>
-          <h3>{card}</h3>
-          <h2>{card}</h2>
-          <img src={card} />
-        </div>
+            <ul>
+            <li>Name:{card.name}</li>
+            <li>Number:{card.number}</li>
+            <img src={card.images.small} />
+          </ul>
+
       </div>
       <button className="button-74" role="button">
         Add

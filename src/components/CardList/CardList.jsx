@@ -13,13 +13,8 @@ export default function CardList() {
   return (
     <main>
       <div className="cardList">
-        {cards.data && cards.data.map((card, i) => (
-          <ul key={i}>
-            <li>Name:{card.name}</li>
-            <li>Number:{card.number}</li>
-            <img src={card.images.small} />
-          </ul>
-        ))}
+        {cards.data && cards.data.map((card) => (
+        <CardItem card={card} key={card.id}/>))}
       </div>
     </main>
   );
