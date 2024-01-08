@@ -13,8 +13,8 @@ export default function CardList() {
   return (
     <main>
       <div className="cardList">
-        {cards.data && cards.data.map((card) => (
-        <CardItem card={card} key={card.id}/>))}
+        {cards.data &&
+          cards.data.map((card) => <CardItem card={card} key={card.id} />)}
       </div>
     </main>
   );

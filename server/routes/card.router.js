@@ -30,13 +30,13 @@ router.get("/", (req, res) => {
       "X-Api-Key": API_KEY,
     },
   })
-  .then((response) => {
-    res.send(response.data);
-  })
-  .catch((error) => {
-    console.log("Error in GET from card Router,", error);
-    res.sendStatus(500);
-  });
+    .then((response) => {
+      res.send(response.data);
+    })
+    .catch((error) => {
+      console.log("Error in GET from card Router,", error);
+      res.sendStatus(500);
+    });
 });
 module.exports = router;
 
