@@ -3,10 +3,13 @@ const pool = require("../modules/pool");
 const axios = require("axios");
 const router = express.Router();
 require("dotenv").config();
+// const API_KEY = process.env.API_KEY;
 
 router.get("/", (req, res) => {
+
   const query = `
-      SELECT * FROM all_cards
+      SELECT * FROM "all_cards"
+      ORDER BY "card_number" ASC;
     `;
   pool
     .query(query)
@@ -20,14 +23,13 @@ router.get("/", (req, res) => {
 });
 
 module.exports = router;
-
-// const API_KEY = process.env.API_KEY;
-
 // router.get("/:id", (req, res) => {
-
 //   axios({
 //     method: "GET",
-//     url: `https://api.pokemontcg.io/v2/cards?api_key=${API_KEY}`,
+//     url: `https://api.pokemontcg.io/v2/cards/select=name,number,images`,
+//     headers: {
+//       "X-Api-Key": API_KEY,
+//     },
 //   })
 //     .then((response) => {
 //       res.send(response.data);

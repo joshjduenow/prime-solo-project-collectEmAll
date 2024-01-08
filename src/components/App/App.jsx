@@ -23,6 +23,7 @@ import SavedCard from "../SavedCard/SavedCard";
 import Archived from "../Archived/Archived";
 
 import "./App.css";
+// require("dotenv").config();
 
 function App() {
   const dispatch = useDispatch();
