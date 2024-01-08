@@ -1,4 +1,5 @@
-import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import React, { useEffect } from "react";
 import "./MyCards.css";
 import CardItem from "../CardItem/CardItem";
 
@@ -8,12 +9,20 @@ import CardItem from "../CardItem/CardItem";
 // or even care what the redux state is
 
 export default function MyCards() {
+  const dispatch = useDispatch();
+  const cards = useSelector((store) => store.cards);
+
+  useEffect(() => {
+    dispatch({ type: "GET_CARDS" });
+  }, []);
   return (
     <>
       <div className="container">
         <h2 className="mycards">My Collection</h2>
       </div>
-      <CardItem />
+      <div className="cardList">
+        {cards.data && cards.data.map((card) => <CardItem card={card} key={card.id} />)}
+      </div>
     </>
   );
 }

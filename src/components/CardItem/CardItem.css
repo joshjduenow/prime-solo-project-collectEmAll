@@ -1,3 +1,8 @@
+.buttons {
+  padding-left: 50px;
+  padding-top: 0px;
+}
+
 .button-74 {
     font-family: "Pokemon Solid", sans-serif;
     background-color: #0a285f;
@@ -8,14 +13,15 @@
     cursor: pointer;
     display: inline-block;
     font-weight: 600;
-    font-size: 18px;
-    padding: 0 18px;
-    line-height: 50px;
+    font-size: 12px;
+    padding: 0 12px;
+    line-height: 35px;
     text-align: center;
     text-decoration: none;
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
+    margin-right: 10px;
   }
   
   .button-74:hover {

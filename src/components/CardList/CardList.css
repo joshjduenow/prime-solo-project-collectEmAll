@@ -1,6 +1,16 @@
-li {
+p {
     font-family: "Pokemon Solid", sans-serif;
-    letter-spacing: 2px;
-    color: #0a285f;
-    text-shadow: 1.5px 1.5px #ffcc00;
+    font-size: 20px;
+    letter-spacing: 3px;
+    color: #ffcc00;
+    text-shadow: 1.5px 1.5px black;
+    background-color: #0a285f;
+    padding-left: -10px;
+    text-align: center;
+}
+
+.cardPic{
+    padding-left: 15%;
+    padding-bottom: 5px;
+
 }
