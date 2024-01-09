@@ -3,7 +3,7 @@ import React from "react";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { useDispatch } from "react-redux";
 
-export default function CardItem({ card }) {
+export default function SavedCardItem({ card }) {
 //   console.log("what is card", card);
 
 
@@ -34,4 +34,3 @@ export default function CardItem({ card }) {
     </>
   );
 }
-
