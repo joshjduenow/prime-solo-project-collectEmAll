@@ -1,19 +1,20 @@
 import { useDispatch, useSelector } from "react-redux";
 import React, { useEffect } from "react";
 import "./MyCards.css";
+import MyCardItem from "../MyCardItem/MyCardItem";
 import CardItem from "../CardItem/CardItem";
 
-// This is one of our simplest components
-// It doesn't have local state
-// It doesn't dispatch any redux actions or display any part of redux state
-// or even care what the redux state is
+
+
+
 
 export default function MyCards() {
   const dispatch = useDispatch();
-  const cards = useSelector((store) => store.cards);
+  const collection = useSelector((store) => store.collection);
+  console.log("what is collection:", collection);
 
   useEffect(() => {
-    dispatch({ type: "GET_CARDS" });
+    dispatch({ type: "FETCH_COLLECTION" });
   }, []);
   return (
     <>
@@ -21,8 +22,8 @@ export default function MyCards() {
         <h2 className="mycards">My Collection</h2>
       </div>
       <div className="cardList">
-        {cards.data &&
-          cards.data.map((card) => <CardItem card={card} key={card.id} />)}
+        {collection &&
+          collection.map((card) => <MyCardItem card={card} key={card.id} />)}
       </div>
     </>
   );

@@ -21,17 +21,3 @@ function* getAllCards() {
 export default function* cardSaga() {
   yield takeLatest("GET_CARDS", getAllCards);
 }
-//   yield takeLatest("SAGA/ADD_CARD", postNewCard);
-// function* postNewCard(action) {
-//   try {
-//     const response = yield axios({
-//       method: "POST",
-//       url: "/api/mycards",
-//       data: {
-//         newCard: action.payload,
-//       },
-//     });
-//   } catch (error) {
-//     console.log("Unable to post to server:", error);
-//   }
-// }

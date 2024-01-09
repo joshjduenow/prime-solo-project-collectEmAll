@@ -1,18 +1,11 @@
-import "./CardItem.css";
+import "../CardItem/CardItem.css";
 import React from "react";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { useDispatch } from "react-redux";
 
 export default function CardItem({ card }) {
-//   console.log("what is card", card);
-  const dispatch = useDispatch();
+  console.log("what is card", card);
 
-  const addToCollection = () => {
-    dispatch({
-      type: "ADD_COLLECTION",
-      payload: card,
-    });
-  };
 
   return (
     <>
@@ -20,13 +13,13 @@ export default function CardItem({ card }) {
         <p>
           Name:{card.name}
           <br></br>
-          Number:{card.number}
+          Number:{card.card_number}
         </p>
-        <img className="cardPic" src={card.images.small} />
+        <img className="cardPic" src={card.image} />
       </div>
       <div className="buttons">
-        <button onClick={addToCollection} className="button-74" role="button">
-          Add
+        <button className="button-74" role="button">
+          Favorite
         </button>
         <button className="button-74" role="button">
           Save
