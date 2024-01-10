@@ -12,6 +12,7 @@ const userRouter = require("./routes/user.router");
 const cardRouter = require("./routes/card.router");
 const collectionRouter = require("./routes/my_collection.router");
 const savedRouter = require("./routes/saved_card.router");
+const archivedRouter = require("./routes/archived.router");
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -29,6 +30,7 @@ app.use("/api/user", userRouter);
 app.use("/api/card", cardRouter);
 app.use("/api/collection", collectionRouter);
 app.use("/api/saved", savedRouter);
+app.use("/api/archived", archivedRouter);
 
 // Serve static files()
 app.use(express.static("build"));

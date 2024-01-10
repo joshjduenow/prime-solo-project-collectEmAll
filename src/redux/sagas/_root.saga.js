@@ -5,6 +5,7 @@ import userSaga from './user.saga';
 import cardSaga from './card.saga';
 import collectionSaga from './my_collection.saga';
 import savedSaga from './saved_card.saga';
+import archivedSaga from './archived.saga';
 
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
@@ -15,6 +16,7 @@ import savedSaga from './saved_card.saga';
 // and login triggers setting the user
 export default function* rootSaga() {
   yield all([
+    archivedSaga(),
     savedSaga(),
     collectionSaga(),
     cardSaga(),
