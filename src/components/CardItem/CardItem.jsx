@@ -47,9 +47,6 @@ export default function CardItem({ card }) {
         <button onClick={addToArchived} className="button-74" role="button">
           Archive
         </button>
-        <button className="button-74" role="button">
-          Delete
-        </button>
       </div>
     </>
   );

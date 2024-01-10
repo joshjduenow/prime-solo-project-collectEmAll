@@ -10,3 +10,43 @@
   font-family: "Pokemon Solid", sans-serif;
   padding-top: 25px;
 }
+
+.buttons-mycards {
+  padding-left: 35px;
+  padding-top: 0px;
+}
+
+.button-my {
+    font-family: "Pokemon Solid", sans-serif;
+    background-color: #0a285f;
+    border: 2px solid #ffcc00;
+    border-radius: 30px;
+    box-shadow: black 4px 4px 0 0;
+    color: #ffcc00;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 600;
+    font-size: 12px;
+    padding: 0 12px;
+    line-height: 35px;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    margin-right: 10px;
+  }
+  
+  .button-my:hover {
+    background-color: #0a285f;
+  }
+  
+  .button-my:active {
+    box-shadow: #0a285f 2px 2px 0 0;
+    transform: translate(2px, 2px);
+  }
+  
+        /* change to adjust button size: 
+      font-size: 20px; 
+      padding: 0 18px 
+      line-height: 50px */

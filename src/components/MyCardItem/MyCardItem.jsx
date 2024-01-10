@@ -1,4 +1,4 @@
-import "../CardItem/CardItem.css";
+import "../MyCards/MyCards.css";
 import React from "react";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { useDispatch } from "react-redux";
@@ -17,17 +17,17 @@ export default function CardItem({ card }) {
         </p>
         <img className="cardPic" src={card.image} />
       </div>
-      <div className="buttons">
-        <button className="button-74" role="button">
+      <div className="buttons-mycards">
+        <button className="button-my" role="button">
           Favorite
         </button>
-        <button className="button-74" role="button">
+        <button className="button-my" role="button">
           Save
         </button>
-        <button className="button-74" role="button">
+        <button className="button-my" role="button">
           Archive
         </button>
-        <button className="button-74" role="button">
+        <button className="button-my" role="button">
           Delete
         </button>
       </div>

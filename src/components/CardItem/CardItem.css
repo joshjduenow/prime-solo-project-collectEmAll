@@ -1,5 +1,5 @@
 .buttons {
-  padding-left: 50px;
+  padding-left: 60px;
   padding-top: 0px;
 }
 
@@ -13,9 +13,9 @@
     cursor: pointer;
     display: inline-block;
     font-weight: 600;
-    font-size: 12px;
-    padding: 0 12px;
-    line-height: 35px;
+    font-size: 18px;
+    padding: 0 14px;
+    line-height: 40px;
     text-align: center;
     text-decoration: none;
     user-select: none;
@@ -33,3 +33,7 @@
     transform: translate(2px, 2px);
   }
   
+        /* change to adjust button size: 
+      font-size: 20px; 
+      padding: 0 18px 
+      line-height: 50px */

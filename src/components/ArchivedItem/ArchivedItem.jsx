@@ -1,4 +1,4 @@
-import "../CardItem/CardItem.css";
+import "../Archived/Archived.css";
 import React from "react";
 
 export default function ArchivedCardItem({ card }) {
@@ -12,11 +12,11 @@ export default function ArchivedCardItem({ card }) {
         </p>
         <img className="cardPic" src={card.image} />
       </div>
-      <div className="buttons">
-        <button className="button-74" role="button">
+      <div className="buttons-arch">
+        <button className="button-arch" role="button">
           Add
         </button>
-        <button className="button-74" role="button">
+        <button className="button-arch" role="button">
           Delete
         </button>
       </div>
