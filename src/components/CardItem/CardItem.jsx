@@ -4,12 +4,19 @@ import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { useDispatch } from "react-redux";
 
 export default function CardItem({ card }) {
-//   console.log("what is card", card);
+  //   console.log("what is card", card);
   const dispatch = useDispatch();
 
   const addToCollection = () => {
     dispatch({
       type: "ADD_COLLECTION",
+      payload: card,
+    });
+  };
+
+  const addToSaved = () => {
+    dispatch({
+      type: "ADD_SAVED",
       payload: card,
     });
   };
@@ -28,7 +35,7 @@ export default function CardItem({ card }) {
         <button onClick={addToCollection} className="button-74" role="button">
           Add
         </button>
-        <button className="button-74" role="button">
+        <button onClick={addToSaved} className="button-74" role="button">
           Save
         </button>
         <button className="button-74" role="button">
@@ -41,4 +48,3 @@ export default function CardItem({ card }) {
     </>
   );
 }
-
