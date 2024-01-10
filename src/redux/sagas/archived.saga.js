@@ -37,7 +37,7 @@ function* deleteFromArchived(action) {
     });
 
     yield put({
-      type: "SET_ARCHIVED",
+      type: "FETCH_ARCHIVED",
     });
   } catch (error) {
     console.log("Unable to delete card from archived", error);
