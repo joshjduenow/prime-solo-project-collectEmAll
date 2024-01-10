@@ -1,4 +1,4 @@
-import "../CardItem/CardItem.css";
+import "../Archived/Archived.css";
 import React from "react";
 
 
@@ -13,17 +13,11 @@ export default function SavedCardItem({ card }) {
         </p>
         <img className="cardPic" src={card.image} />
       </div>
-      <div className="buttons">
-        <button className="button-74" role="button">
-          Favorite
+      <div className="buttons-saved">
+        <button className="button-save" role="button">
+          Add
         </button>
-        <button className="button-74" role="button">
-          Save
-        </button>
-        <button className="button-74" role="button">
-          Archive
-        </button>
-        <button className="button-74" role="button">
+        <button className="button-save" role="button">
           Delete
         </button>
       </div>
