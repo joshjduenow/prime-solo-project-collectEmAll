@@ -4,6 +4,7 @@ import user from './user.reducer';
 import cards from './card.reducer';
 import collection from './my_collection.reducer';
 import saved from './saved_card.reducer';
+import archived from './archived.reducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -12,6 +13,7 @@ import saved from './saved_card.reducer';
 // Lets make a bigger object for our store, with the objects from our reducers.
 // This is what we get when we use 'state' inside of 'mapStateToProps'
 const rootReducer = combineReducers({
+  archived,
   cards,
   collection,
   saved,

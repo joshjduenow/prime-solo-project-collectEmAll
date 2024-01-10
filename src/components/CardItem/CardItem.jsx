@@ -20,6 +20,12 @@ export default function CardItem({ card }) {
       payload: card,
     });
   };
+  const addToArchived = () => {
+    dispatch({
+      type: "ADD_ARCHIVED",
+      payload: card,
+    });
+  };
 
   return (
     <>
@@ -38,7 +44,7 @@ export default function CardItem({ card }) {
         <button onClick={addToSaved} className="button-74" role="button">
           Save
         </button>
-        <button className="button-74" role="button">
+        <button onClick={addToArchived} className="button-74" role="button">
           Archive
         </button>
         <button className="button-74" role="button">

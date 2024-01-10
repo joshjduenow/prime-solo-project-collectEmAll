@@ -1,8 +1,7 @@
 import "../CardItem/CardItem.css";
 import React from "react";
 
-
-export default function SavedCardItem({ card }) {
+export default function ArchivedCardItem({ card }) {
   return (
     <>
       <div className="cardItem">
@@ -15,13 +14,7 @@ export default function SavedCardItem({ card }) {
       </div>
       <div className="buttons">
         <button className="button-74" role="button">
-          Favorite
-        </button>
-        <button className="button-74" role="button">
-          Save
-        </button>
-        <button className="button-74" role="button">
-          Archive
+          Add
         </button>
         <button className="button-74" role="button">
           Delete
