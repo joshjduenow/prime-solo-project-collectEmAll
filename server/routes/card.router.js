@@ -5,23 +5,6 @@ const router = express.Router();
 require("dotenv").config();
 const API_KEY = process.env.API_KEY;
 
-// router.get("/", (req, res) => {
-
-//   const query = `
-//       SELECT * FROM "all_cards"
-//       ORDER BY "card_number" ASC;
-//     `;
-//   pool
-//     .query(query)
-//     .then((result) => {
-//       res.send(result.rows);
-//     })
-//     .catch((err) => {
-//       console.log("ERROR: Get all cards", err);
-//       res.sendStatus(500);
-//     });
-// });
-
 router.get("/", (req, res) => {
   axios({
     method: "GET",
@@ -39,6 +22,3 @@ router.get("/", (req, res) => {
     });
 });
 module.exports = router;
-
-// query to get card specifics?
-// &&q=select=name,number,images

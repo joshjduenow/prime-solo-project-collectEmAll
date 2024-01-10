@@ -37,7 +37,7 @@ function* deleteFromSaved(action) {
     });
 
     yield put({
-      type: "SET_COLLECTION",
+      type: "FETCH_SAVED",
     });
   } catch (error) {
     console.log("Unable to delete card from server", error);
