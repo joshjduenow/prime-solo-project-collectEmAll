@@ -5,7 +5,7 @@ function* getMyCollection() {
   try {
     const response = yield axios({
       method: "GET",
-      url: "/api/collection/",
+      url: "/api/card_collection/",
     });
     yield put({
       type: "SET_COLLECTION",
@@ -20,26 +20,11 @@ function* addToMyCollection(action) {
   try {
     const cardResponse = yield axios({
       method: "POST",
-      url: "/api/collection/collection_card",
+      url: "/api/card_collection",
       data: action.payload
     });
   } catch (error) {
     console.log("Unable to post new card to server:", error);
-  }
-}
-function* setFaveCard(action) {
-  try {
-    const cardResponse = yield axios({
-      method: "PUT",
-      url: `/api/collection/${action.payload.id}`,
-      data: { my_collection_card_id: action.payload.favorite },
-    });
-
-    yield put({
-      type: "SAGA/SET_FAVORITE",
-    });
-  } catch (error) {
-    console.log("Unable to update favorite card from server", error);
   }
 }
 
@@ -47,12 +32,12 @@ function* deleteFromCollection(action) {
   try {
     const cardResponse = yield axios({
       method: "DELETE",
-      url: `/api/collection/${action.payload.id}`,
+      url: `/api/card_collection/${action.payload.id}`,
       data: action.payload,
     });
 
     yield put({
-      type: "SET_COLLECTION",
+      type: "FETCH_COLLECTION",
     });
   } catch (error) {
     console.log("Unable to delete card from server", error);
@@ -61,6 +46,5 @@ function* deleteFromCollection(action) {
 export default function* collectionSaga() {
   yield takeLatest("FETCH_COLLECTION", getMyCollection);
   yield takeLatest("ADD_COLLECTION", addToMyCollection);
-  yield takeLatest("SET_FAVORITE", setFaveCard);
   yield takeLatest("DELETE_FROM_COLLECTION", deleteFromCollection);
 }

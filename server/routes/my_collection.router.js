@@ -6,7 +6,19 @@ const pool = require("../modules/pool");
 router.get("/", (req, res) => {
   console.log("req.user", req.user);
   const sqlText = `
-    SELECT * FROM "my_collection_card"
+  SELECT 
+	"card_collection"."id",
+	"card_collection"."user_id",
+	"card_collection"."name",
+	"card_collection"."card_number",
+	"card_collection"."image",
+	"card_collection"."category_id",
+	"categories"."type" as "category_type"
+FROM "card_collection"
+	LEFT JOIN "categories"
+	on "card_collection"."category_id" = "categories"."id"
+WHERE "category_id" = 1
+ORDER BY "card_collection"."category_id";
     `;
 
   pool
@@ -20,13 +32,13 @@ router.get("/", (req, res) => {
     });
 });
 
-router.post("/collection_card", (req, res) => {
+router.post("/", (req, res) => {
   console.log("req.body:", req.body)
   const sqlText = `
-  INSERT INTO "my_collection_card"
-  ("user_id", "name", "card_number", "image")
+  INSERT INTO "card_collection"
+  ("user_id", "name", "card_number", "image", "category_id")
   VALUES
-  ($1, $2, $3, $4)`;
+  ($1, $2, $3, $4, 1);`;
   const sqlValues = [
     req.user.id,
     req.body.name,
@@ -46,8 +58,8 @@ router.post("/collection_card", (req, res) => {
 
 router.put("/:id", (req, res) => {
   const sqlText = `
-  UPDATE "my_collection_card"
-    SET "favorite" = $1
+  UPDATE "card_collection"
+    SET "category_id" = $1
     WHERE "id" = '${req.params.id}' AND "user_id" = ${[req.user.id]};`;
 
   const sqlValues = [req.body.category_id];
@@ -64,7 +76,7 @@ router.put("/:id", (req, res) => {
 
 router.delete("/:id", (req, res) => {
   const sqlText = `
-    DELETE FROM "my_collection_card"
+    DELETE FROM "card_collection"
       WHERE "id" = ${req.params.id} AND "user_id" = ${[req.user.id]};`;
   pool
     .query(sqlText)

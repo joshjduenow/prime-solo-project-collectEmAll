@@ -4,7 +4,6 @@ import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { useDispatch } from "react-redux";
 
 export default function CardItem({ card }) {
-//   console.log("what is card", card);
 
 
   return (
@@ -34,4 +33,3 @@ export default function CardItem({ card }) {
     </>
   );
 }
-

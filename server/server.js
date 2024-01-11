@@ -28,7 +28,7 @@ app.use(passport.session());
 /* Routes */
 app.use("/api/user", userRouter);
 app.use("/api/card", cardRouter);
-app.use("/api/collection", collectionRouter);
+app.use("/api/card_collection", collectionRouter);
 app.use("/api/saved", savedRouter);
 app.use("/api/archived", archivedRouter);
 

@@ -4,10 +4,6 @@ import "./MyCards.css";
 import MyCardItem from "../MyCardItem/MyCardItem";
 import CardItem from "../CardItem/CardItem";
 
-
-
-
-
 export default function MyCards() {
   const dispatch = useDispatch();
   const collection = useSelector((store) => store.collection);

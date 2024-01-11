@@ -2,22 +2,21 @@ import "../Archived/Archived.css";
 import React from "react";
 import { useDispatch } from "react-redux";
 
-
 export default function ArchivedCardItem({ card }) {
-    const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-    const addToCollection = () => {
-        dispatch({
-          type: "ADD_COLLECTION",
-          payload: card,
-        });
-      };
-      const deleteFromArchived = (card) => {
-          dispatch({
-            type: "DELETE_FROM_ARCHIVED",
-            payload: card,
-          });
-        };
+  const archivedToCollection = () => {
+    dispatch({
+      type: "ARCHIVED_TO_COLLECTION",
+      payload: card,
+    });
+  };
+  const deleteFromArchived = (card) => {
+    dispatch({
+      type: "DELETE_FROM_ARCHIVED",
+      payload: card,
+    });
+  };
   return (
     <>
       <div className="cardItem">
@@ -29,10 +28,14 @@ export default function ArchivedCardItem({ card }) {
         <img className="cardPic" src={card.image} />
       </div>
       <div className="buttons-arch">
-        <button onClick={addToCollection} className="button-arch" role="button">
+        <button onClick={archivedToCollection} className="button-arch" role="button">
           Add
         </button>
-        <button onClick={() => deleteFromArchived(card)} className="button-arch" role="button">
+        <button
+          onClick={() => deleteFromArchived(card)}
+          className="button-arch"
+          role="button"
+        >
           Delete
         </button>
       </div>

@@ -3,7 +3,6 @@ import React, { useEffect } from "react";
 import SavedCardItem from "../SavedCardItem/SavedCardItem";
 import "./SavedCard.css";
 
-
 export default function SavedCard() {
   const dispatch = useDispatch();
   const saved = useSelector((store) => store.saved);
