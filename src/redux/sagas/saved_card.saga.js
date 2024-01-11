@@ -20,11 +20,27 @@ function* addToSaved(action) {
   try {
     const cardResponse = yield axios({
       method: "POST",
-      url: "/api/saved/saved_card",
+      url: "/api/saved",
       data: action.payload,
     });
   } catch (error) {
     console.log("Unable to post saved card to server:", error);
+  }
+}
+function* savedToCollection(action) {
+  console.log("action.payload:", action.payload);
+  try {
+    const response = yield axios({
+      method: "PUT",
+      url: `/api/saved/${action.payload.id}`,
+      data: action.payload,
+    });
+
+    yield put({
+      type: "FETCH_SAVED",
+    });
+  } catch (error) {
+    console.log("Unable to update archive to my collection from server", error);
   }
 }
 
@@ -47,4 +63,7 @@ export default function* savedSaga() {
   yield takeLatest("FETCH_SAVED", getSaved);
   yield takeLatest("ADD_SAVED", addToSaved);
   yield takeLatest("DELETE_FROM_SAVED", deleteFromSaved);
+  yield takeLatest("ADD_TO_COLLECTION", savedToCollection);
+
+
 }

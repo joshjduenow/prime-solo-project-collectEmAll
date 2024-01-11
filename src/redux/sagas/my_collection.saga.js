@@ -32,7 +32,23 @@ function* collectionToArchived(action) {
   try {
     const response = yield axios({
       method: "PUT",
-      url: `/api/card_collection/${action.payload.id}`,
+      url: `/api/card_collection/archived/${action.payload.id}`,
+      data: action.payload,
+    });
+
+    yield put({
+      type: "FETCH_ARCHIVED",
+    });
+  } catch (error) {
+    console.log("Unable to update archive to my collection from server", error);
+  }
+}
+function* collectionToSaved(action) {
+  console.log("action.payload:", action.payload);
+  try {
+    const response = yield axios({
+      method: "PUT",
+      url: `/api/card_collection/saved/${action.payload.id}`,
       data: action.payload,
     });
 
@@ -64,5 +80,7 @@ export default function* collectionSaga() {
   yield takeLatest("ADD_COLLECTION", addToMyCollection);
   yield takeLatest("DELETE_FROM_COLLECTION", deleteFromCollection);
   yield takeLatest("COLLECTION_TO_ARCHIVED", collectionToArchived);
+  yield takeLatest("COLLECTION_TO_SAVED", collectionToSaved);
+
 
 }

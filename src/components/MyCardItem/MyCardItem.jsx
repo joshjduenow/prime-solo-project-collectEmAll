@@ -6,6 +6,13 @@ import { useDispatch } from "react-redux";
 export default function CardItem({ card }) {
   const dispatch = useDispatch();
 
+  const collectionToSaved = () => {
+    dispatch({
+      type: "COLLECTION_TO_SAVED",
+      payload: card,
+    });
+  };
+
   const collectionToArchived = () => {
     dispatch({
       type: "COLLECTION_TO_ARCHIVED",
@@ -30,17 +37,25 @@ export default function CardItem({ card }) {
         <img className="cardPic" src={card.image} />
       </div>
       <div className="buttons-mycards">
-        <button className="button-my" role="button">
+        <button
+          onClick={() => collectionToSaved(card)}
+          className="button-my"
+          role="button"
+        >
           Save
         </button>
         <button
-        onClick={() => collectionToArchived(card)} 
-        className="button-my" role="button">
+          onClick={() => collectionToArchived(card)}
+          className="button-my"
+          role="button"
+        >
           Archive
         </button>
-        <button 
-        onClick={() => deleteFromCollection(card)}
-        className="button-my" role="button">
+        <button
+          onClick={() => deleteFromCollection(card)}
+          className="button-my"
+          role="button"
+        >
           Delete
         </button>
       </div>

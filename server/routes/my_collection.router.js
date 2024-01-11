@@ -56,7 +56,7 @@ router.post("/", (req, res) => {
     });
 });
 
-router.put("/:id", (req, res) => {
+router.put("/archived/:id", (req, res) => {
   const sqlText = `
   UPDATE "card_collection"
     SET "category_id" = 3
@@ -74,6 +74,23 @@ router.put("/:id", (req, res) => {
     });
 });
 
+router.put("/saved/:id", (req, res) => {
+  const sqlText = `
+  UPDATE "card_collection"
+    SET "category_id" = 2
+    WHERE "id" = $1;`;
+
+  const sqlValues = [req.params.id];
+  pool
+    .query(sqlText, sqlValues)
+    .then((result) => {
+      res.sendStatus(201);
+    })
+    .catch((err) => {
+      console.log("Error in collection.router PUT,", err);
+      res.sendStatus(500);
+    });
+});
 router.delete("/:id", (req, res) => {
   const sqlText = `
     DELETE FROM "card_collection"

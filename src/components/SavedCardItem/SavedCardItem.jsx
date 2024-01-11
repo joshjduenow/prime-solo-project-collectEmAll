@@ -7,7 +7,7 @@ export default function SavedCardItem({ card }) {
 
   const addToCollection = () => {
     dispatch({
-      type: "ADD_COLLECTION",
+      type: "ADD_TO_COLLECTION",
       payload: card,
     });
   };
