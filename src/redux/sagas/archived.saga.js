@@ -44,10 +44,11 @@ function* deleteFromArchived(action) {
   }
 }
 function* archivedToCollection(action) {
+    console.log("action.payload:", action.payload);
     try {
         const response = yield axios({
           method: "PUT",
-          url: `/api/card_collection/${action.payload.id}`,
+          url: `/api/archived/${action.payload.id}`,
           data: action.payload,
         });
     

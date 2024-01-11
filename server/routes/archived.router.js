@@ -93,13 +93,13 @@ router.post("/", (req, res) => {
 // });
 
 router.put("/:id", (req, res) => {
-
+console.log("req.params:", req.params);
   const sqlText = `
-  UPDATE "card_collection",
-    SET "category_id" = 1,
+  UPDATE "card_collection"
+    SET "category_id" = 1
     WHERE "id" = $1;`;
 
-  const sqlValues = [req.body.category_id];
+  const sqlValues = [req.params.id];
   pool
     .query(sqlText, sqlValues)
     .then((result) => {
