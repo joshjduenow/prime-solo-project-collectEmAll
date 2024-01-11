@@ -59,10 +59,10 @@ router.post("/", (req, res) => {
 router.put("/:id", (req, res) => {
   const sqlText = `
   UPDATE "card_collection"
-    SET "category_id" = $1
-    WHERE "id" = '${req.params.id}' AND "user_id" = ${[req.user.id]};`;
+    SET "category_id" = 3
+    WHERE "id" = $1;`;
 
-  const sqlValues = [req.body.category_id];
+  const sqlValues = [req.params.id];
   pool
     .query(sqlText, sqlValues)
     .then((result) => {

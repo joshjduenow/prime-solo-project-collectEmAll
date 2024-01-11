@@ -32,7 +32,7 @@ function* deleteFromArchived(action) {
   try {
     const cardResponse = yield axios({
       method: "DELETE",
-      url: `/api/card_collection/${action.payload.id}`,
+      url: `/api/archived/${action.payload.id}`,
       data: action.payload,
     });
 
@@ -44,25 +44,24 @@ function* deleteFromArchived(action) {
   }
 }
 function* archivedToCollection(action) {
-    console.log("action.payload:", action.payload);
-    try {
-        const response = yield axios({
-          method: "PUT",
-          url: `/api/archived/${action.payload.id}`,
-          data: action.payload,
-        });
-    
-        yield put({
-          type: "FETCH_ARCHIVED",
-        });
-      } catch (error) {
-        console.log("Unable to update archive to my collection from server", error);
-      }
+  console.log("action.payload:", action.payload);
+  try {
+    const response = yield axios({
+      method: "PUT",
+      url: `/api/archived/${action.payload.id}`,
+      data: action.payload,
+    });
+
+    yield put({
+      type: "FETCH_ARCHIVED",
+    });
+  } catch (error) {
+    console.log("Unable to update archive to my collection from server", error);
   }
+}
 export default function* archivedSaga() {
   yield takeLatest("FETCH_ARCHIVED", getArchived);
   yield takeLatest("ADD_ARCHIVED", addToArchived);
   yield takeLatest("DELETE_FROM_ARCHIVED", deleteFromArchived);
   yield takeLatest("ARCHIVED_TO_COLLECTION", archivedToCollection);
-
 }

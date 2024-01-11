@@ -4,7 +4,20 @@ import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { useDispatch } from "react-redux";
 
 export default function CardItem({ card }) {
+  const dispatch = useDispatch();
 
+  const collectionToArchived = () => {
+    dispatch({
+      type: "COLLECTION_TO_ARCHIVED",
+      payload: card,
+    });
+  };
+  const deleteFromCollection = (card) => {
+    dispatch({
+      type: "DELETE_FROM_COLLECTION",
+      payload: card,
+    });
+  };
 
   return (
     <>
@@ -18,15 +31,16 @@ export default function CardItem({ card }) {
       </div>
       <div className="buttons-mycards">
         <button className="button-my" role="button">
-          Favorite
-        </button>
-        <button className="button-my" role="button">
           Save
         </button>
-        <button className="button-my" role="button">
+        <button
+        onClick={() => collectionToArchived(card)} 
+        className="button-my" role="button">
           Archive
         </button>
-        <button className="button-my" role="button">
+        <button 
+        onClick={() => deleteFromCollection(card)}
+        className="button-my" role="button">
           Delete
         </button>
       </div>

@@ -27,6 +27,22 @@ function* addToMyCollection(action) {
     console.log("Unable to post new card to server:", error);
   }
 }
+function* collectionToArchived(action) {
+  console.log("action.payload:", action.payload);
+  try {
+    const response = yield axios({
+      method: "PUT",
+      url: `/api/card_collection/${action.payload.id}`,
+      data: action.payload,
+    });
+
+    yield put({
+      type: "FETCH_ARCHIVED",
+    });
+  } catch (error) {
+    console.log("Unable to update archive to my collection from server", error);
+  }
+}
 
 function* deleteFromCollection(action) {
   try {
@@ -47,4 +63,6 @@ export default function* collectionSaga() {
   yield takeLatest("FETCH_COLLECTION", getMyCollection);
   yield takeLatest("ADD_COLLECTION", addToMyCollection);
   yield takeLatest("DELETE_FROM_COLLECTION", deleteFromCollection);
+  yield takeLatest("COLLECTION_TO_ARCHIVED", collectionToArchived);
+
 }
