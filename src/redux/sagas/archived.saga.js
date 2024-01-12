@@ -29,6 +29,7 @@ function* addToArchived(action) {
 }
 
 function* deleteFromArchived(action) {
+  console.log("what is action.payload:", action.payload);
   try {
     const cardResponse = yield axios({
       method: "DELETE",

@@ -7,7 +7,7 @@ function* getAllCards() {
   try {
     const cardResponse = yield axios({
       method: "GET",
-      url: "/api/card/",
+      url: `/api/card/`,
     });
     yield put({
       type: "SET_CARD",

@@ -2,6 +2,7 @@ import React from 'react';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import {useSelector} from 'react-redux';
 import CardList from '../CardList/CardList';
+import SearchBar from '../SearchBar/SearchBar';
 import "./UserPage.css";
 
 function UserPage() {
@@ -13,6 +14,7 @@ function UserPage() {
       <h2 className="greeting">Start Collecting, {user.username}!</h2>
       {/* <p>Your ID is: {user.id}</p> */}
     </div>
+    {/* <SearchBar /> */}
     <CardList />
     {/* <LogOutButton className="btn" /> */}
     </>

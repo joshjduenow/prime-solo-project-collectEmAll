@@ -9,7 +9,7 @@ function AboutPage() {
   return (
     <div className="container">
       <div>
-        <p>This about page is for anyone to read!</p>
+        <p>Welcome Trainers to the Collect 'Em All Pokemon Card Collection App!</p>
       </div>
     </div>
   );

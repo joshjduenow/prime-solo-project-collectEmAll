@@ -37,7 +37,7 @@ function* collectionToArchived(action) {
     });
 
     yield put({
-      type: "FETCH_ARCHIVED",
+      type: "FETCH_COLLECTION",
     });
   } catch (error) {
     console.log("Unable to update archive to my collection from server", error);
@@ -53,7 +53,7 @@ function* collectionToSaved(action) {
     });
 
     yield put({
-      type: "FETCH_ARCHIVED",
+      type: "FETCH_COLLECTION",
     });
   } catch (error) {
     console.log("Unable to update archive to my collection from server", error);

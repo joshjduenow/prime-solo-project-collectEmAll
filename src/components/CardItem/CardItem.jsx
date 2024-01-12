@@ -37,7 +37,8 @@ export default function CardItem({ card }) {
         <img className="cardPic" src={card.images.small} />
       </div>
       <div className="buttons">
-        <button onClick={addToCollection} className="button-74" role="button">
+        <button
+        onClick={addToCollection} className="button-74" role="button">
           Add
         </button>
         <button onClick={addToSaved} className="button-74" role="button">
