@@ -33,7 +33,7 @@ function Nav() {
               <Link className="navLink" to="/mycards">
                 My Cards
               </Link>
-              
+
               <Link className="navLink" to="/archive">
                 Archived
               </Link>

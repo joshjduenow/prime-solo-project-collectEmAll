@@ -2,17 +2,31 @@ import "../Archived/Archived.css";
 import * as React from "react";
 import { useDispatch } from "react-redux";
 import { useState, Fragment } from "react";
-import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
-import DialogContent from "@mui/material/DialogContent";
-import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
-import { blue } from "@mui/material/colors";
+import Snackbar from "@mui/material/Snackbar";
 
 export default function ArchivedCardItem({ card }) {
   const [open, setOpen] = useState(false);
+  const [myCardsPopUp, setMyCardsPopUp] = useState(false);
+  const [deletePopUp, setDeletePopUp] = useState(false);
   const dispatch = useDispatch();
+
+  const handleMyCards = () => {
+    setMyCardsPopUp(true);
+  };
+  const handleDeletedCards = () => {
+    setDeletePopUp(true);
+  };
+  const handlePopUpClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setMyCardsPopUp(false);
+    setDeletePopUp(false);
+  };
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -23,7 +37,7 @@ export default function ArchivedCardItem({ card }) {
   };
 
   const archivedToCollection = () => {
-    setOpen(true);
+    setMyCardsPopUp(true);
     dispatch({
       type: "ARCHIVED_TO_COLLECTION",
       payload: card,
@@ -54,6 +68,12 @@ export default function ArchivedCardItem({ card }) {
         >
           Add
         </button>
+        <Snackbar
+          open={myCardsPopUp}
+          autoHideDuration={4000}
+          onClose={handlePopUpClose}
+          message="Added to My Cards!"
+        />
         <button
           onClick={() => handleClickOpen(card)}
           className="button-arch"
@@ -69,9 +89,7 @@ export default function ArchivedCardItem({ card }) {
           aria-labelledby="alert-dialog-title"
           aria-describedby="alert-dialog-description"
         >
-          <DialogTitle id="alert-dialog-title">
-            {"Are you sure?"}
-          </DialogTitle>
+          <DialogTitle id="alert-dialog-title">{"Are you sure?"}</DialogTitle>
           <DialogActions>
             <button
               onClick={deleteFromArchived}

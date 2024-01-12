@@ -5,9 +5,6 @@
 .dialog_box {
   background-color: #fb1b1b;
 }
-fragment {
-  opacity: 75%,
-}
 
 .archived {
   font-size: 30px;

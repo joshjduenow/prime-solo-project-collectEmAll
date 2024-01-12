@@ -1,17 +1,38 @@
-import "../Archived/Archived.css";
-import React from "react";
+import "../SavedCard/SavedCard.css";
 import { useDispatch } from "react-redux";
+import { useState } from "react";
+import * as React from "react";
+import Snackbar from "@mui/material/Snackbar";
 
 export default function SavedCardItem({ card }) {
   const dispatch = useDispatch();
+  const [cardsPopUp, setCardsPopUp] = useState(false);
+  const [deletePopUp, setDeletePopUp] = useState(false);
+
+  const handleMyCards = () => {
+    setCardsPopUp(true);
+  };
+  const handleDeletedCards = () => {
+    setDeletePopUp(true);
+  };
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setCardsPopUp(false);
+    setDeletePopUp(false);
+  };
 
   const addToCollection = () => {
+    setCardsPopUp(true);
     dispatch({
       type: "ADD_TO_COLLECTION",
       payload: card,
     });
   };
-  const deleteFromSaved = (card) => {
+  const deleteFromSaved = () => {
+    setDeletePopUp(true);
     dispatch({
       type: "DELETE_FROM_SAVED",
       payload: card,
@@ -32,13 +53,21 @@ export default function SavedCardItem({ card }) {
         <button onClick={addToCollection} className="button-save" role="button">
           Add
         </button>
-        <button
-          onClick={() => deleteFromSaved(card)}
-          className="button-save"
-          role="button"
-        >
+        <Snackbar
+          open={cardsPopUp}
+          autoHideDuration={4000}
+          onClose={handleClose}
+          message="Added to My Cards!"
+        />
+        <button onClick={deleteFromSaved} className="button-save" role="button">
           Delete
         </button>
+        <Snackbar
+          open={deletePopUp}
+          autoHideDuration={4000}
+          onClose={handleClose}
+          message="Deleted from Saved!"
+        />
       </div>
     </>
   );
