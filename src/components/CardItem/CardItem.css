@@ -1,6 +1,11 @@
+.container {
+  padding-top: 25px;
+}
+
 .buttons {
   padding-left: 60px;
   padding-top: 0px;
+  padding-bottom: 15px;
 }
 
 .button-74 {

@@ -30,7 +30,7 @@ export default function CardItem({ card }) {
   };
 
   const addToCollection = () => {
-    setCardsPopUp(true);
+    handleMyCards();
     dispatch({
       type: "ADD_COLLECTION",
       payload: card,
@@ -38,14 +38,14 @@ export default function CardItem({ card }) {
   };
 
   const addToSaved = () => {
-    savedCardsPopUp(true);
+    handleSavedCards();
     dispatch({
       type: "ADD_SAVED",
       payload: card,
     });
   };
   const addToArchived = () => {
-    archivedCardsPopUp(true);
+    handleArchivedCards();
     dispatch({
       type: "ADD_ARCHIVED",
       payload: card,
@@ -71,7 +71,7 @@ export default function CardItem({ card }) {
           autoHideDuration={4000}
           onClose={handleClose}
           message="Added to My Cards!"
-        />
+          />
         <button onClick={addToSaved} className="button-74" role="button">
           Save
         </button>

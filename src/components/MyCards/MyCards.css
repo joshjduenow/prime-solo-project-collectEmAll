@@ -1,5 +1,5 @@
 .container {
-  padding-top: 25px;
+  padding-top: 45px;
   padding-bottom: 0px;
 }
 .mycards {
@@ -9,9 +9,12 @@
   text-shadow: 1.5px 1.5px black;
   font-family: "Pokemon Solid", sans-serif;
   padding-top: 25px;
+  padding-bottom: -10px;
+  margin-bottom: -10px;
 }
 
 .buttons-mycards {
+  padding-bottom: 15px;
   padding-left: 45px;
   padding-top: 0px;
 }

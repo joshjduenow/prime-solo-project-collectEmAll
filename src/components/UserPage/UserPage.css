@@ -3,7 +3,7 @@
   align-content: space-around;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding-top: 45px;
 }
 
 .greeting {
@@ -12,7 +12,9 @@
     color: #FB1B1B;
     text-shadow: 1.5px 1.5px black;
     font-family: "Pokemon Solid", sans-serif;
-    padding-top: 30px;
+    padding-top: 25px;
     padding-left: -10px;
     padding-right: -10px;
+    padding-bottom: -10px;
+    margin-bottom: -10px;
 }

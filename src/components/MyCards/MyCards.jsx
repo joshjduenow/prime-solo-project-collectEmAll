@@ -7,7 +7,6 @@ import CardItem from "../CardItem/CardItem";
 export default function MyCards() {
   const dispatch = useDispatch();
   const collection = useSelector((store) => store.collection);
-  console.log("what is collection:", collection);
 
   useEffect(() => {
     dispatch({ type: "FETCH_COLLECTION" });

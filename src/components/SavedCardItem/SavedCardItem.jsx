@@ -1,4 +1,4 @@
-import "../SavedCard/SavedCard.css";
+import "./SavedCardItem.css";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
 import * as React from "react";
@@ -24,15 +24,15 @@ export default function SavedCardItem({ card }) {
     setDeletePopUp(false);
   };
 
-  const addToCollection = () => {
-    setCardsPopUp(true);
+  const addCollection = () => {
+    handleMyCards();
     dispatch({
       type: "ADD_TO_COLLECTION",
       payload: card,
     });
   };
   const deleteFromSaved = () => {
-    setDeletePopUp(true);
+    handleDeletedCards();
     dispatch({
       type: "DELETE_FROM_SAVED",
       payload: card,
@@ -50,7 +50,7 @@ export default function SavedCardItem({ card }) {
         <img className="cardPic" src={card.image} />
       </div>
       <div className="buttons-saved">
-        <button onClick={addToCollection} className="button-save" role="button">
+        <button onClick={addCollection} className="button-save" role="button">
           Add
         </button>
         <Snackbar
