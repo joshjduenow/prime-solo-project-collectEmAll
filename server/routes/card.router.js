@@ -8,7 +8,7 @@ const API_KEY = process.env.API_KEY;
 router.get("/", (req, res) => {
   axios({
     method: "GET",
-    url: `https://api.pokemontcg.io/v2/cards?select=id,name,number,images&&pageSize=15`,
+    url: `https://api.pokemontcg.io/v2/cards?select=id,name,number,images&&pageSize=55`,
     headers: {
       "X-Api-Key": API_KEY,
     },

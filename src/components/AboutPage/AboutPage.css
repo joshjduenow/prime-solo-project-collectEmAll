@@ -1,0 +1,21 @@
+
+.container-aboutpg {
+    font-size: 25px;
+    padding-top: 10px;
+    margin-bottom: -10px;
+    background-color: #0a285f;
+}
+.about_page_list {
+    font-size: 15px;
+    font-family: "Pokemon Solid", sans-serif;
+    background-color: #0a285f;
+    color: #ffcc00;
+    text-shadow: 1.5px 1.5px black;
+    padding-left: 50px;
+}
+.tech {
+    margin-bottom: -5px;
+    margin-top: -10px;
+    padding-top: -10px;
+    text-align: center;
+}
