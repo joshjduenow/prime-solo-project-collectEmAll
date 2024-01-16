@@ -32,7 +32,7 @@ router.get("/", (req, res) => {
 FROM "card_collection"
 	LEFT JOIN "categories"
 	on "card_collection"."category_id" = "categories"."id"
-WHERE "category_id" = 3
+WHERE "category_id" = 3 AND "user_id" = ${req.user.id}
 ORDER BY "card_collection"."category_id";`
   pool
     .query(sqlText)
