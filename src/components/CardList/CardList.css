@@ -5,8 +5,9 @@ p {
     color: #ffcc00;
     text-shadow: 1.5px 1.5px black;
     background-color: #0a285f;
-    padding-left: -10px;
+    height: 70px;
     text-align: center;
+    padding-top: 5px;
 }
 
 .cardPic{
