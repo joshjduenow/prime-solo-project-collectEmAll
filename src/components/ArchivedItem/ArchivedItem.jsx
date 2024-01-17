@@ -41,7 +41,7 @@ export default function ArchivedCardItem({ card }) {
     dispatch({
       type: "ARCHIVED_TO_COLLECTION",
       payload: card,
-    });
+    })
   };
   const deleteFromArchived = () => {
     setOpen(false);
