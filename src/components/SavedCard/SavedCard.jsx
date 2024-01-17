@@ -6,7 +6,6 @@ import "./SavedCard.css";
 export default function SavedCard() {
   const dispatch = useDispatch();
   const saved = useSelector((store) => store.saved);
-  console.log("what is saved:", saved);
 
   useEffect(() => {
     dispatch({ type: "FETCH_SAVED" });
