@@ -27,8 +27,8 @@
   
   .pokeball-container {
     position: absolute;
-    top: 72px; /* Adjust this value to position the circle vertically */
-    left: 140px; /* Adjust this value to position the circle horizontally */
+    top: 85px; /* Adjust this value to position the circle vertically */
+    left: 160px; /* Adjust this value to position the circle horizontally */
     width: 75px; /* Twice the pokeball's width */
     height: 75px; /* Twice the pokeball's height */
     border-radius: 50%; /* Making it a circle */
