@@ -1,5 +1,6 @@
 .container {
   padding-top: 25px;
+  width: auto;
 }
 .saved {
   font-size: 30px;

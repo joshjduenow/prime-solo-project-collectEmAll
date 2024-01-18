@@ -4,7 +4,9 @@
     top: 50%; /* Position the Pokeball in the center of the circle */
     left: 50%; /* Position the Pokeball in the center of the circle */
     transform: translate(-50%, -50%); /* Centering the Pokeball */
-    display: block;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
     width: 60px;
     height: 60px;
     background: radial-gradient(
@@ -28,7 +30,7 @@
   .pokeball-container {
     position: fixed;
     top: 85px; /* Adjust this value to position the circle vertically */
-    left: 160px; /* Adjust this value to position the circle horizontally */
+    left: 39%; /* Adjust this value to position the circle horizontally */
     width: 75px; /* Twice the pokeball's width */
     height: 75px; /* Twice the pokeball's height */
     border-radius: 50%; /* Making it a circle */
