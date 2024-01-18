@@ -1,4 +1,6 @@
 .nav-title { 
+  position: fixed;
+  width: 100%;
   letter-spacing: 4px;
   font-family: "Pokemon Solid", sans-serif;
   font-size: 28px;
@@ -10,4 +12,5 @@
   padding-left: 75px;
   padding-bottom: 15px;
   margin: 0;
+
 }
